@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgottsch <lgottsch@student.42prague.c      +#+  +:+       +#+        */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/09 10:58:00 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/06/09 11:03:26 by lgottsch         ###   ########.fr       */
+/*   Created: 2024/09/16 16:30:50 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/16 16:32:54 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include <libft.h>
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-/*
-int	main()
+int	ft_tolower(int c)
 {
-	char string[] = "Hello";
-	printf("length of hello is %i\n", ft_strlen(string));
-}*/
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
+}

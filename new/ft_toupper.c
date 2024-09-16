@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   real_ft_putchar.c                                  :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgottsch <lgottsch@student.42prague.c      +#+  +:+       +#+        */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 11:50:20 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/06/06 11:51:36 by lgottsch         ###   ########.fr       */
+/*   Created: 2024/09/16 16:19:35 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/16 16:27:53 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_toupper(int c)
 {
-	write(1, &c, 1);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	else
+		return (c);
 }
+
+// #include <stdio.h>
+// int main (void)
+// {
+// 	int c = '*';
+// 	c = ft_toupper(c);
+// 	printf("%c\n", c);
+// }

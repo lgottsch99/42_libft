@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgottsch <lgottsch@student.42prague.c      +#+  +:+       +#+        */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/09 10:33:21 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/06/09 19:36:52 by lgottsch         ###   ########.fr       */
+/*   Created: 2024/09/16 15:56:15 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/16 15:58:07 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <libft.h>
 
-void	ft_putstr(char const *str)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1); //evtl putchar
-		i++;
-	}
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	else
+		return (0);
 }
-/*
-int main()
-{
-	char string[11] = "I am Lilli";
-	ft_putstr(string);
-}*/

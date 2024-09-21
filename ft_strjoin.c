@@ -1,0 +1,56 @@
+//HEADER
+#include  <stdlib.h>
+#include <string.h>
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+/*
+Allocates (with malloc(3)) and returns a new
+string, which is the result of the concatenation
+of ’s1’ and ’s2’.
+*/
+#include <unistd.h>
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*new;
+	size_t	i;
+	size_t	y;
+
+	new = (char	*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!new)
+		return (NULL);
+
+	i = 0;
+	while (i < ft_strlen(s1))
+	{
+		new[i] = s1[i];
+		i++;
+	}
+	y = 0;
+	while (y < ft_strlen(s2))
+	{
+		new[i + y] = s2[y];
+		y++;
+	}
+	new[i + y] = '\0';
+	return (new);
+}
+
+#include <stdio.h>
+int main (void)
+{
+	char	*s1 = "Hello ";
+	char	*s2 = "World";
+	char	*r;
+
+	r = ft_strjoin(s1,s2);
+	printf("%s\n", r);
+}

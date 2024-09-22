@@ -1,12 +1,15 @@
-//header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 17:48:07 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/22 17:49:08 by lgottsch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*
-The strdup() function allocates sufficient memory for a copy of the string s1, does the copy, and
-     returns a pointer to it.  The pointer may subsequently be used as an argument to the function
-     free(3).
-
-     If insufficient memory is available, NULL is returned and errno is set to ENOMEM.
-*/
 #include <stdlib.h>
 
 // size_t	ft_strlen(const char *s)
@@ -22,8 +25,8 @@ The strdup() function allocates sufficient memory for a copy of the string s1, d
 char	*ft_strdup(const char *s1)
 {
 	char	*ptr;
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 
 	len = ft_strlen(s1) + 1;
 	ptr = (char *)malloc(sizeof(char) * len);

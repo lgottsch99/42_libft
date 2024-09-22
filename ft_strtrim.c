@@ -1,16 +1,27 @@
-//HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 17:58:22 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/22 17:58:35 by lgottsch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *s)
-{
-	int	i;
+// size_t	ft_strlen(const char *s)
+// {
+// 	int	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
 
 /*
 Allocates (with malloc(3)) and returns a copy of

@@ -1,15 +1,27 @@
-//HEADER
-#include  <stdlib.h>
-#include <string.h>
-size_t	ft_strlen(const char *s)
-{
-	int	i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 17:49:56 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/22 17:51:13 by lgottsch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include <stdlib.h>
+#include <string.h>
+
+// size_t	ft_strlen(const char *s)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
 
 /*
 Allocates (with malloc(3)) and returns a new
@@ -24,10 +36,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	y;
 
-	new = (char	*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!new)
 		return (NULL);
-
 	i = 0;
 	while (i < ft_strlen(s1))
 	{
@@ -44,13 +55,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (new);
 }
 
-#include <stdio.h>
-int main (void)
-{
-	char	*s1 = "Hello ";
-	char	*s2 = "World";
-	char	*r;
+// #include <stdio.h>
+// int main (void)
+// {
+// 	char	*s1 = "Hello ";
+// 	char	*s2 = "World";
+// 	char	*r;
 
-	r = ft_strjoin(s1,s2);
-	printf("%s\n", r);
-}
+// 	r = ft_strjoin(s1,s2);
+// 	printf("%s\n", r);
+// }

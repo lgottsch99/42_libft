@@ -1,4 +1,14 @@
-// HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 18:00:07 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/22 18:01:02 by lgottsch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 Allocates (with malloc(3)) and returns a substring
@@ -11,19 +21,17 @@ returns The substring or NULL if the allocation fails.
 #include <stdlib.h>
 #include <string.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*tmp;
-	char	*sub;
+	char			*tmp;
+	char			*sub;
 	unsigned int	i;
 
 	if (!s)
 		return (NULL);
-	//malloc space for sub
-	sub = (char	*)malloc(sizeof(char) * (len + 1)); // does substring need to be terminated? 
+	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
-	//copy  
 	tmp = (char *)s;
 	i = 0;
 	while (i < len)

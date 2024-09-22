@@ -1,4 +1,15 @@
-// HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 15:02:15 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/22 15:03:11 by lgottsch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 // size_t	ft_strlen(const char *s)
 // {
@@ -12,9 +23,9 @@
 
 #include <unistd.h>
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    size_t	len;
+	size_t	len;
 	size_t	i;
 
 	len = ft_strlen(s);

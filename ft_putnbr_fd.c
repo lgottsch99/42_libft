@@ -1,4 +1,14 @@
-// header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 14:56:43 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/22 15:01:38 by lgottsch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
@@ -7,19 +17,17 @@
 //     write(fd, &c, 1);
 // }
 
-void    ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	//int to chars
-	char array[10];
-	int	i;
-	long num;
+	char	array[10];
+	int		i;
+	long	num;
 
 	num = n;
-	//write array
 	if (num == 0)
 	{
 		write(fd, "0", 1);
-		return;
+		return ;
 	}
 	if (num < 0)
 	{
@@ -27,23 +35,18 @@ void    ft_putnbr_fd(int n, int fd)
 		num = num * (-1);
 	}
 	i = 0;
-	while (num)//cut last digit off and store in array
+	while (num)
 	{
-		array[i] = (num % 10) + 48; // get last d and shift to char
-		num = num / 10; //shift comma
-		i++;
+		array[i++] = (num % 10) + 48;
+		num = num / 10;
 	}
-	//print array but backwards
-	while (i > 0)
-	{
-		i--;
+	while (i-- > 0)
 		ft_putchar_fd(array[i], fd);
-	}
 }
 
 // int main (void)
 // {
-// 	int x =  0;
+// 	int x =  -4865;
 // 	ft_putnbr_fd(x, 1);
 // 	write(1, "\n", 1);
 // }

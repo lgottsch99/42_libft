@@ -1,4 +1,15 @@
-//HEADER 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 13:47:04 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/22 14:01:09 by lgottsch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -41,72 +52,56 @@ return: The string representing the integer.
 NULL if the allocation fails.
 */
 
-// static size_t ft_length(int n)
-// {	
-// 	size_t	x;
-// 	long	num; 
-
-// 	num = n; 
-// 	x = 0; 
-// 	if (num < 0)//space for -
-// 	{
-// 		x++; 
-// 		num = num * (-1);
-// 	}
-// 	while (num)
-// 	{
-// 		num = num / 10; //shift comma
-// 		x++;
-// 	}
-// 	return (x);
-// }
-
-static char *ft_switch(char *itoa, size_t x)
+static size_t	ft_length(int n)
 {
-	size_t	i; 
-	char	tmp; //to store for switching
+	size_t	x;
+	long	num;
+
+	num = n;
+	x = 0;
+	if (num < 0)
+	{
+		x++;
+		num = num * (-1);
+	}
+	while (num)
+	{
+		num = num / 10;
+		x++;
+	}
+	return (x);
+}
+
+// - 1 bc index at 0
+static char	*ft_switch(char *itoa, size_t x)
+{
+	size_t	i;
+	char	tmp;
 
 	i = 0;
 	while (i < (x / 2))
 	{
 		tmp = itoa[i];
-		itoa[i] = itoa[x - i - 1]; //-1 bc index at 0
-		itoa[x - i - 1] = tmp; 
+		itoa[i] = itoa[x - i - 1];
+		itoa[x - i - 1] = tmp;
 		i++;
 	}
 	return (itoa);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_doit(char *itoa, long num, int n)
 {
-	size_t	x;
-	size_t	i; 
-	char	*itoa; 
-	long	num; 
+	size_t	i;
 
-	if (n == 0)
-		return(ft_strdup("0"));
-
-	//get len of array
-	x = ft_length(n);
-
-	//malloc
-	itoa = (char *)malloc(sizeof(char) * (x + 1));
-	if(!itoa)
-		return (NULL);
-
-	//putnbr into array
-	num = n; 
-	i = 0; 
+	i = 0;
 	if (num < 0)
 	{
 		num = num * (-1);
-		//i++;
 	}
 	while (num)
 	{
-		itoa[i] = (num % 10) + 48; // get last d, shift to char, storing backwards
-		num = num / 10; //shift comma
+		itoa[i] = (num % 10) + 48;
+		num = num / 10;
 		i++;
 	}
 	if (n < 0)
@@ -115,9 +110,24 @@ char	*ft_itoa(int n)
 		i++;
 	}
 	itoa[i] = '\0';
-	//switch to right order
-	itoa = ft_switch(itoa, x);
+	return (itoa);
+}
 
+char	*ft_itoa(int n)
+{
+	size_t	x;
+	char	*itoa;
+	long	num;
+
+	if (n == 0)
+		return (ft_strdup("0"));
+	x = ft_length(n);
+	itoa = (char *)malloc(sizeof(char) * (x + 1));
+	if (!itoa)
+		return (NULL);
+	num = n;
+	itoa = ft_doit(itoa, num, n);
+	itoa = ft_switch(itoa, x);
 	return (itoa);
 }
 
@@ -132,7 +142,7 @@ char	*ft_itoa(int n)
 // 	int x3 = 0;
 // 	char *string3 = ft_itoa(x3);
 // 	printf("%s\n", string3);
-// 	int x4 = 123;
+// 	int x4 = -123;
 // 	char *string4 = ft_itoa(x4);
 // 	printf("%s\n", string4);
 // }

@@ -6,10 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:49:56 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/22 17:51:13 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:45:35 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <string.h>
 

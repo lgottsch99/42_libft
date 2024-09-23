@@ -6,10 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:58:22 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/22 17:58:35 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:46:42 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -29,20 +30,20 @@ Allocates (with malloc(3)) and returns a copy of
 from the beginning and the end of the string.
 */
 #include <stdlib.h>
+
 static size_t	ft_count_start(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	y;
 	size_t	count_start;
 	size_t	control;
-	
+
 	i = 0;
 	count_start = 0;
-	while (s1[i] != '\0') //from start, check every char if part of set
+	while (s1[i] != '\0')
 	{
-		printf("start: %c\n", s1[i]);
 		y = 0;
-		control = 0; //tracks if match found = 1
+		control = 0;
 		while (set[y] != '\0')
 		{
 			if (s1[i] == set[y])
@@ -52,8 +53,8 @@ static size_t	ft_count_start(char const *s1, char const *set)
 			}
 			y++;
 		}
-		if (control == 0)//Means no match for any y at i
-			break;
+		if (control == 0)
+			break ;
 		i++;
 	}
 	return (count_start);
@@ -66,11 +67,10 @@ static size_t	ft_count_end(char const *s1, char const *set)
 	size_t	control;
 	size_t	count_end;
 
-	i = ft_strlen(s1) - 1; // index at 0, want to go to last position
+	i = ft_strlen(s1) - 1;
 	count_end = 0;
 	while (s1[i])
 	{
-		printf("end: %c\n", s1[i]);
 		y = 0;
 		control = 0;
 		while (set[y] != '\0')
@@ -83,7 +83,7 @@ static size_t	ft_count_end(char const *s1, char const *set)
 			y++;
 		}
 		if (control == 0)
-				break; 
+			break ;
 		i--;
 	}
 	return (count_end);
@@ -99,14 +99,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	len = ft_strlen(s1);
 	count_start = ft_count_start(s1, set);
-	//printf("count start is %zu\n", count_start);
 	count_end = ft_count_end(s1, set);
-	//printf("count end is %zu\n", count_end);
-
-	trim = (char	*)malloc(sizeof(char) * (len - count_start - count_end + 1));
+	trim = (char *)malloc(sizeof(char) * (len - count_start - count_end + 1));
 	if (!trim)
-		return(NULL);
-
+		return (NULL);
 	i = 0;
 	while (count_start < (len - count_end))
 	{

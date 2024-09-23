@@ -6,10 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 15:02:15 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/22 15:03:11 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:45:00 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 // size_t	ft_strlen(const char *s)
 // {

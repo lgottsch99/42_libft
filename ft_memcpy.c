@@ -6,10 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:56:45 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/16 15:18:56 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:44:22 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <strings.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)

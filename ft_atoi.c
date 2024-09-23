@@ -6,9 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:42:50 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/22 13:44:46 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:42:51 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 //The atoi() function converts the initial portion of the string 
 //pointed to by nptr to int. The behavior is the same as

@@ -6,12 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:44 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/22 13:24:04 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:22:21 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 /*
 Applies the function ’f’ on each character of

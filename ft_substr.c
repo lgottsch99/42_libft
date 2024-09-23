@@ -6,10 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 18:00:07 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/22 18:01:02 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:46:49 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /*
 Allocates (with malloc(3)) and returns a substring
 from the string ’s’.

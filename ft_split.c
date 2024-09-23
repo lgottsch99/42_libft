@@ -6,38 +6,39 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:07:52 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/22 17:47:16 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:45:09 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*tmp;
-	char	*sub;
-	unsigned int	i;
+// char *ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	char	*tmp;
+// 	char	*sub;
+// 	unsigned int	i;
 
-	if (!s)
-		return (NULL);
-	//malloc space for sub
-	sub = (char	*)malloc(sizeof(char) * (len + 1));  
-	if (!sub)
-		return (NULL);
-	//copy  
-	tmp = (char *)s;
-	i = 0;
-	while (i < len)
-	{
-		sub[i] = tmp [start];
-		start++;
-		i++;
-	}
-	sub[i] = '\0';
-	return (sub);
-}
+// 	if (!s)
+// 		return (NULL);
+// 	//malloc space for sub
+// 	sub = (char	*)malloc(sizeof(char) * (len + 1));  
+// 	if (!sub)
+// 		return (NULL);
+// 	//copy  
+// 	tmp = (char *)s;
+// 	i = 0;
+// 	while (i < len)
+// 	{
+// 		sub[i] = tmp [start];
+// 		start++;
+// 		i++;
+// 	}
+// 	sub[i] = '\0';
+// 	return (sub);
+// }
 /*
 Allocates (with malloc(3)) and returns an array
 of strings obtained by splitting ’s’ using the
@@ -55,7 +56,7 @@ static int	ft_words(char const *s, char c)
 	int	words;
 	int	control;
 	int	i;
-	
+
 	i = 0;
 	control = 0;
 	words = 0;
@@ -70,11 +71,10 @@ static int	ft_words(char const *s, char c)
 			control = 0;
 		i++;
 	}
-	printf("words: %i\n", words);
 	return (words);
 }
 
-static int	ft_sep(char const *s, char c, int i) //seperate word in string starting from certain location
+static int	ft_sep(char const *s, char c, int i)
 {
 	int	y;
 
@@ -84,17 +84,18 @@ static int	ft_sep(char const *s, char c, int i) //seperate word in string starti
 	return (y);
 }
 
-static void ft_free_all(char **array, int x)
+static void	*ft_free_all(char **array, int x)
 {
-	int i; 
+	int	i;
 
-	i = 0; 
+	i = 0;
 	while (i <= x)
 	{
 		free(array[i]);
 		i++;
 	}
 	free(array);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -103,8 +104,9 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	*ptr;
 	int		x;
-	
-	if (!(array = (char **)malloc(sizeof(char *) * (ft_words(s, c) + 1))))
+
+	array = (char **)malloc(sizeof(char *) * (ft_words(s, c) + 1));
+	if (!array)
 		return (NULL);
 	i = 0;
 	x = 0;
@@ -114,11 +116,9 @@ char	**ft_split(char const *s, char c)
 			i++;
 		else if (s[i] != c)
 		{
-			if (!(ptr = ft_substr(s, i, ft_sep(s, c, i))))
-			{
-				ft_free_all(array, x);
-				return (NULL);
-			}		
+			ptr = ft_substr(s, i, ft_sep(s, c, i));
+			if (!ptr)
+				return (ft_free_all(array, x));
 			array[x++] = ptr;
 			i = i + ft_sep(s, c, i);
 		}
@@ -127,15 +127,15 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-int main(void)
-{
-	char	*s = "hello..why.am.......I.sick";
-	char	c = '.';
-	char **array = ft_split(s, c);
-	int i = 0;
-	while (array[i])
-	{
-		printf("substr: %s\n", array[i]);
-		i++;
-	}
-}
+// int main(void)
+// {
+// 	char	*s = "hello.why..am.i.....sick.";
+// 	char	c = '.';
+// 	char **array = ft_split(s, c);
+// 	int i = 0;
+// 	while (array[i])
+// 	{
+// 		printf("substr: %s\n", array[i]);
+// 		i++;
+// 	}
+// }

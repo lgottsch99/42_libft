@@ -6,11 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:30:50 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/16 16:32:54 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:46:56 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

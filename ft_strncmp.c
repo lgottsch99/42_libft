@@ -6,12 +6,12 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:20:22 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/16 17:52:03 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:46:22 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
-//what if one str shorter than the other?
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

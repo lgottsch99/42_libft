@@ -6,12 +6,12 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 14:54:06 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:44:49 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:18:52 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+
 // size_t	ft_strlen(const char *s)
 // {
 // 	int	i;
@@ -21,8 +21,6 @@
 // 		i++;
 // 	return (i);
 // }
-
-#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -6,7 +6,7 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 18:00:07 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:46:49 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:21:36 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ maximum size ’len’.
 
 returns The substring or NULL if the allocation fails.
 */
-#include <stdlib.h>
-#include <string.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

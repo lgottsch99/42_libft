@@ -6,12 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:38:53 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:42:57 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:17:50 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
 void	ft_bzero(void *s, size_t n)
 {

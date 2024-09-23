@@ -6,12 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 14:08:16 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:44:29 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:18:34 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 static void	ft_backward(unsigned char *temp_d, unsigned char *temp_s, size_t n)
 {

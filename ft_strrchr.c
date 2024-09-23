@@ -6,12 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:00:14 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:46:34 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:02:31 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 // size_t	ft_strlen(const char *s)
 // {
@@ -28,10 +27,8 @@ char	*ft_strrchr(const char *s, int c) //ptr to the LAST OCCURENCE
 {
 	int	len;
 
-	len = 1 + ft_strlen(s);
-	if (s == NULL)
-		return (NULL);
-	while (len)
+	len = ft_strlen(s);
+	while (len >= 0)
 	{
 		if (s[len] == (char)c)
 			return ((char *)&s[len]);

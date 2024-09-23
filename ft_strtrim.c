@@ -6,13 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:58:22 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:46:42 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:21:27 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
 // size_t	ft_strlen(const char *s)
 // {
@@ -29,7 +27,6 @@ Allocates (with malloc(3)) and returns a copy of
 ’s1’ with the characters specified in ’set’ removed
 from the beginning and the end of the string.
 */
-#include <stdlib.h>
 
 static size_t	ft_count_start(char const *s1, char const *set)
 {

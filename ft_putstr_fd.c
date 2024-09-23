@@ -6,12 +6,12 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 15:02:15 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:45:00 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:10:49 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+
 // size_t	ft_strlen(const char *s)
 // {
 // 	int	i;
@@ -22,20 +22,11 @@
 // 	return (i);
 // }
 
-#include <unistd.h>
-
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s);
-	i = 0;
-	while (i < len)
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
 
 // int main (void)

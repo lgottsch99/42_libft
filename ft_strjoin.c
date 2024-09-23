@@ -6,13 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:49:56 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:45:35 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:20:38 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
 // size_t	ft_strlen(const char *s)
 // {
@@ -29,7 +27,6 @@ Allocates (with malloc(3)) and returns a new
 string, which is the result of the concatenation
 of ’s1’ and ’s2’.
 */
-#include <unistd.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

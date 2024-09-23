@@ -6,7 +6,7 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:15:13 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 15:59:23 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:44:44 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h> // for NULL
 # include <string.h> // for NULL
 # include <stdlib.h> // for malloc
+# include <unistd.h> //for write
 
 //mandatory p1
 int		ft_isalpha(int c);

@@ -6,21 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:49:56 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 19:20:38 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:59:06 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// size_t	ft_strlen(const char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 		i++;
-// 	return (i);
-// }
 
 /*
 Allocates (with malloc(3)) and returns a new

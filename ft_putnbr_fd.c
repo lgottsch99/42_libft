@@ -6,16 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 14:56:43 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 19:19:48 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:58:06 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// void    ft_putchar_fd(char c, int fd)
-// {
-//     write(fd, &c, 1);
-// }
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -6,21 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:58:22 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 19:21:27 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:00:02 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// size_t	ft_strlen(const char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 		i++;
-// 	return (i);
-// }
 
 /*
 Allocates (with malloc(3)) and returns a copy of
@@ -79,7 +69,7 @@ static size_t	ft_count_end(char const *s1, char const *set)
 			}
 			y++;
 		}
-		if (control == 0)
+		if (control == 0 || i == 0)
 			break ;
 		i--;
 	}
@@ -94,27 +84,30 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*trim;
 
+	if (!s1)
+		return (NULL);
 	len = ft_strlen(s1);
+	if (len == 0)
+		return (ft_strdup(""));
 	count_start = ft_count_start(s1, set);
 	count_end = ft_count_end(s1, set);
+	if (count_start + count_end >= len)
+		return (ft_strdup(""));
 	trim = (char *)malloc(sizeof(char) * (len - count_start - count_end + 1));
 	if (!trim)
 		return (NULL);
 	i = 0;
 	while (count_start < (len - count_end))
-	{
-		trim[i] = s1[count_start];
-		i++;
-		count_start++;
-	}
+		trim[i++] = s1[count_start++];
 	trim[i] = '\0';
 	return (trim);
 }
 
+// #include <stdio.h>
 // int main (void)
 // {
-// 	char	*s = "baaasunaaabbbbb";
-// 	char *set = "ab";
+// 	char	*s = "aaaaaaa";
+// 	char *set = "a";
 // 	char *trim = ft_strtrim(s, set);
 // 	printf("%s\n", trim);
 // }

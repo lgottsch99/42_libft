@@ -6,40 +6,11 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:47:04 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 19:18:12 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:57:44 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// size_t	ft_strlen(const char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 		i++;
-// 	return (i);
-// }
-
-// char	*ft_strdup(const char *s1)
-// {
-// 	char	*ptr;
-// 	int	len;
-// 	int	i;
-
-// 	len = ft_strlen(s1) + 1;
-// 	ptr = (char *)malloc(sizeof(char) * len);
-// 	if (!ptr)
-// 		return (NULL);
-// 	i = 0;
-// 	while (i < len)
-// 	{
-// 		ptr[i] = (char)s1[i];
-// 		i++;
-// 	}
-// 	return (ptr);
-// }
 
 /*
 Allocates (with malloc(3)) and returns a string

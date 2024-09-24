@@ -6,23 +6,12 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:45:19 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 19:18:01 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:57:40 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <string.h>
-// void	ft_bzero(void *s, size_t n)
-// {
-// 	unsigned char	*tmp;
-
-// 	tmp = (unsigned char *)s;
-// 	while (n)
-// 	{
-// 		*tmp = '\0';
-// 		tmp++;
-// 		n--;
-// 	}
-// }
+// #include <stdlib.h>
 
 #include "libft.h"
 
@@ -47,14 +36,15 @@ void	*ft_calloc(size_t nmemb, size_t size)
 // int main(void)
 // {
 // 	char * s;
-// 	s = (char *)ft_calloc(3, 7);
+// 	s = (char *)ft_calloc(1, 0);
 // 	if (!s)
 // 	{
 // 		printf("fail\n");
+// 		return (1);
 // 	}
 // 	int i;
 // 	i = 0;
-// 	while (i < 7)
+// 	while (i < 10)
 // 	{
 // 		printf("%c\n", s[i]);
 // 		i++;

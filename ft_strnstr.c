@@ -6,30 +6,18 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:56:51 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/23 19:21:09 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:59:46 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// size_t	ft_strlen(const char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 		i++;
-// 	return (i);
-// }
-
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	length_little;
 	size_t	i;
 	size_t	y;
 
-	length_little = ft_strlen(little);
-	if (length_little == 0)
+	if (ft_strlen(little) == 0)
 		return ((char *)big);
 	i = 0;
 	while (i < len && big[i])
@@ -37,7 +25,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		if (big[i] == little[0])
 		{
 			y = 0;
-			while (big[i + y] == little[y] && i + y <= len)
+			while (big[i + y] == little[y] && i + y < len)
 			{
 				if (little[y + 1] == '\0')
 					return ((char *)&big[i]);
@@ -53,7 +41,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // int main(void)
 // {
 // 	char * big = "Foo Bar Baz";
-// 	char *little = "hi";
-// 	char* r = ft_strnstr(big, little, 25);
+// 	char *little = "v";
+// 	char* r = ft_strnstr(big, little, 7);
 // 	printf("%s\n", r);
 // }

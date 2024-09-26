@@ -6,7 +6,7 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:15:13 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/25 20:41:20 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/26 19:51:20 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h> // for NULL
 # include <string.h> // for NULL
-# include <stdlib.h> // for malloc
+# include <stdlib.h> // for malloc, free
 # include <unistd.h> //for write
 
 typedef struct s_list
@@ -75,5 +75,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif

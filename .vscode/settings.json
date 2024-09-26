@@ -1,6 +1,8 @@
 {
 	"files.associations": {
 		"array": "c",
-		"random": "c"
+		"random": "c",
+		"stdio.h": "c",
+		"libft.h": "c"
 	}
 }

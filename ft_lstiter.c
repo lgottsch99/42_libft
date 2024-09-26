@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 14:15:19 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/26 19:25:34 by lgottsch         ###   ########.fr       */
+/*   Created: 2024/09/26 17:15:17 by lgottsch          #+#    #+#             */
+/*   Updated: 2024/09/26 18:01:11 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- The memset() function fills the first n bytes of the 
- memory area pointed to by s with the constant byte c.
-*/
+// #include <stdio.h>
+// void	print(void	*ptr)
+// {
+// 	printf("%s\n", (char *)ptr);
+// }
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t			i;
-	unsigned char	*tmp;
+	t_list	*ptr;
 
-	tmp = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	ptr = lst;
+	while (ptr)
 	{
-		*tmp = c;
-		tmp++;
-		i++;
+		f(ptr -> content);
+		ptr = ptr -> next;
 	}
-	return (s);
 }
+
 // #include <stdio.h>
 // int main (void)
 // {
-//     char string[7] = "Hello!";
-//     printf("old: %s\n", string);
-//     ft_memset(string, 65, 20);
-//     printf("new: %s\n", string);
+// 	t_list l3;
+// 	l3.content = "!";
+// 	l3.next = NULL;
+// 	t_list l2;
+// 	l2.content = "World ";
+// 	l2.next = &l3;
+// 	t_list l1; 
+// 	l1.content = "Hello ";
+// 	l1.next =  &l2;
+
+// 	t_list	*ptr = &l1;
+// 	ft_lstiter(ptr, print);
 // }

@@ -6,7 +6,7 @@
 #    By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 17:49:09 by lgottsch          #+#    #+#              #
-#    Updated: 2024/09/25 20:40:43 by lgottsch         ###   ########.fr        #
+#    Updated: 2024/09/26 19:11:18 by lgottsch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ CFUNCTIONS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 					 ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 					 ft_tolower.c ft_toupper.c
 
-BFUNCTIONS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
+BFUNCTIONS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+					ft_lstdelone.c ft_lstclear.c ft_lstiter.c
 					
 					 
 O_FILES = $(CFUNCTIONS:.c=.o)

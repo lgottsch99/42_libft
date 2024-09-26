@@ -6,7 +6,7 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:55:45 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/25 20:46:27 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/26 15:11:54 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,20 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!new)
-		return ;
 	if (lst)
 	{
-		last = ft_lstlast(*lst);
-		last -> next = new;
-		new -> next = NULL;
+		if (*lst)
+		{
+			last = ft_lstlast(*lst);
+			last -> next = new;
+		}
+		else
+			*lst = new;
 	}
-	return ;
 }
+
+//checking if elements in list already existing
+// only adding element if we have ptr to list 
 
 // #include <stdio.h>
 // int main (void)

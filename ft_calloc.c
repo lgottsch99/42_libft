@@ -6,7 +6,7 @@
 /*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:45:19 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/09/24 18:57:40 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/09/28 13:30:53 by lgottsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,23 @@
 
 #include "libft.h"
 
+// void	ft_bzero(void *s, size_t n)
+// {
+// 	unsigned char	*tmp;
+
+// 	tmp = (unsigned char *)s;
+// 	while (n)
+// 	{
+// 		*tmp = '\0';
+// 		tmp++;
+// 		n--;
+// 	}
+// }
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	ptr = malloc(size * nmemb);
 	if (!ptr)
 		return (NULL);
